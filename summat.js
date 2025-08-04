@@ -4,11 +4,17 @@ function getComputerChoice() {
     let random = Math.random();
 
     if (random < 1/3) {
-    return ("Rock");
+    return ("rock");
     } else if (random < 2/3) {
-    return ("Paper");
+    return ("paper");
     } else {
-    return ("Scissors");
+    return ("scissors");
     }
 }
 console.log(getComputerChoice())
+
+function getHumanChoice() {
+    let choice = prompt("Choose rock, paper or scissors.")
+    return choice.toLowerCase()
+}
+console.log(getHumanChoice())
