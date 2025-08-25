@@ -15,10 +15,8 @@ function getHumanChoice() {
     return choice.toLowerCase()
 }
 
-// function playGame() {
-
-    let humanScore = 0
-    let computerScore = 0
+let humanScore = 0
+let computerScore = 0
 
 function playRound(humanChoice, computerChoice) {
     choices.textContent = `You chose ${humanChoice}, computer chose ${computerChoice}.`;
@@ -51,26 +49,20 @@ function playRound(humanChoice, computerChoice) {
         result.textContent = "Draw!";
         scores.textContent = "Computer's score = " +  computerScore + "\nYour score = " + humanScore;
     }
+
+    if (computerScore === 5 || humanScore === 5) {
+    if (humanScore > computerScore) {
+        gameover.textContent = "Game over! You won!";
+    }
+    else  {
+        gameover.textContent = "Game over! The computer won!";
+    }
+
+    humanScore = 0;
+    computerScore = 0;
+}
         
 }
-
-    // playRound(getHumanChoice(), getComputerChoice());
-    // playRound(getHumanChoice(), getComputerChoice());
-    // playRound(getHumanChoice(), getComputerChoice());
-    // playRound(getHumanChoice(), getComputerChoice());
-    // playRound(getHumanChoice(), getComputerChoice());
-    // 
-    // if (humanScore > computerScore) {
-    //     console.log("Game over! You won!");
-    // }
-    // else if (humanScore < computerScore) {
-    //     console.log("Game over! The computer won!");
-    // }
-    // else {
-    //     console.log("Game over! It's a draw!");
-    // }
-    // 
-// }
 
 const rockbutton = document.querySelector(".rock")
 const paperbutton = document.querySelector(".paper")
@@ -90,4 +82,3 @@ const choices = document.querySelector(".choices")
 const result = document.querySelector(".result")
 const scores = document.querySelector(".scores")
 const gameover = document.querySelector(".gameover")
-// playGame()
