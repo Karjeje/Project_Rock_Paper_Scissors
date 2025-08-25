@@ -19,6 +19,11 @@ let humanScore = 0
 let computerScore = 0
 
 function playRound(humanChoice, computerChoice) {
+
+    if (humanScore === 0 && computerScore === 0) {
+        gameover.textContent = ""; 
+    }
+
     choices.textContent = `You chose ${humanChoice}, computer chose ${computerChoice}.`;
 
     if (humanChoice === "rock" && computerChoice === "paper") {
